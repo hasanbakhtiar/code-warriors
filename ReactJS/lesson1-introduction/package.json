@@ -1,0 +1,29 @@
+{
+  "name": "lesson1-introduction",
+  "version": "1.0.0",
+  "description": "this app for testing",
+  "main": "index.js",
+  "scripts": {
+    "wb": "webpack --mode production",
+    "start": "live-server public"
+  },
+  "keywords": [
+    "react js",
+    "for lesson"
+  ],
+  "author": "Hasan Bakhtiar",
+  "license": "ISC",
+  "dependencies": {
+    "babel-loader": "^9.1.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.23.9",
+    "@babel/core": "^7.24.0",
+    "@babel/preset-env": "^7.24.0",
+    "@babel/preset-react": "^7.23.3",
+    "webpack": "^5.90.3",
+    "webpack-cli": "^5.1.4"
+  }
+}
