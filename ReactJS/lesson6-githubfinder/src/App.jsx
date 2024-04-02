@@ -5,7 +5,7 @@ import Users from './components/Users'
 import axios from 'axios'
 const App = () => {
   const [user,setUser] = useState([]);
-
+  const [alert,setAlert] = useState();
   const workApiWithSearch=(keyword)=>{
     axios
     .get(`https://api.github.com/search/users?q=${keyword}`)
@@ -15,8 +15,8 @@ const App = () => {
   return (
     <div>
       <Header />
-      <Search comingkey={workApiWithSearch}/>
-      <Users switchdata={user} />
+      <Search comingkey={workApiWithSearch} comingAlert={(item)=>{setAlert(item)}}/>
+      {user.length ===0?<h3 className='text-center'>{alert}</h3>:<Users switchdata={user} />}
     </div>
   )
 }

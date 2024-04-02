@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 
-const Search = ({comingkey}) => {
+const Search = ({comingkey,comingAlert}) => {
     const [keyword,setKeyword] = useState();
+    const [alert] = useState("no users");
     const formSubmited=(e)=>{
         e.preventDefault();
         if (!keyword) {
@@ -9,6 +10,7 @@ const Search = ({comingkey}) => {
         }else{
             comingkey(keyword);
             setKeyword('');
+            comingAlert(alert);
         }
     }
     return (
