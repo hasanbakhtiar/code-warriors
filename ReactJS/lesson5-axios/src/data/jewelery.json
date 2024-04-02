@@ -1,0 +1,72 @@
+[
+    {
+      "id": 1,
+      "title": "Silver Pendant Necklace",
+      "price": 49.99,
+      "description": "Elegant silver pendant necklace with intricate design.",
+      "photo_link": "https://example.com/silver_pendant_necklace.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Gold Hoop Earrings",
+      "price": 79.99,
+      "description": "Classic gold hoop earrings perfect for everyday wear.",
+      "photo_link": "https://example.com/gold_hoop_earrings.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Diamond Stud Earrings",
+      "price": 299.99,
+      "description": "Stunning diamond stud earrings crafted with high-quality diamonds.",
+      "photo_link": "https://example.com/diamond_stud_earrings.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Rose Gold Bracelet",
+      "price": 129.99,
+      "description": "Chic rose gold bracelet featuring a delicate chain design.",
+      "photo_link": "https://example.com/rose_gold_bracelet.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Sapphire Cocktail Ring",
+      "price": 399.99,
+      "description": "Exquisite sapphire cocktail ring with a vintage-inspired setting.",
+      "photo_link": "https://example.com/sapphire_cocktail_ring.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Pearl Drop Earrings",
+      "price": 69.99,
+      "description": "Timeless pearl drop earrings perfect for formal occasions.",
+      "photo_link": "https://example.com/pearl_drop_earrings.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Emerald Pendant Necklace",
+      "price": 199.99,
+      "description": "Elegant emerald pendant necklace showcasing a rich green emerald.",
+      "photo_link": "https://example.com/emerald_pendant_necklace.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Platinum Wedding Band",
+      "price": 499.99,
+      "description": "Classic platinum wedding band with a polished finish.",
+      "photo_link": "https://example.com/platinum_wedding_band.jpg"
+    },
+    {
+      "id": 9,
+      "title": "Ruby Tennis Bracelet",
+      "price": 599.99,
+      "description": "Dazzling ruby tennis bracelet featuring a row of vibrant rubies.",
+      "photo_link": "https://example.com/ruby_tennis_bracelet.jpg"
+    },
+    {
+      "id": 10,
+      "title": "Diamond Halo Engagement Ring",
+      "price": 1999.99,
+      "description": "Exquisite diamond halo engagement ring with a sparkling center diamond.",
+      "photo_link": "https://example.com/diamond_halo_engagement_ring.jpg"
+    }
+]
