@@ -1,0 +1,18 @@
+
+
+
+.single-card{
+    width: 30%;
+    height: 50vh;
+    border: 2px solid #000;
+    border-radius: 30px;
+    padding: 20px;
+    @include ortalama();
+    .text-con{
+        // @extend .single-card;
+        background-color: $menimrengim;    
+        color: #fff;
+    @include ortalama();
+
+    }
+}

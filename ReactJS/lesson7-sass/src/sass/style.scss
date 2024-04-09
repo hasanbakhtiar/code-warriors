@@ -1,0 +1,28 @@
+@import 'variables';
+@import 'mixin';
+@import 'single-card';
+
+$base-color: rgb(10, 152, 0);
+
+// @for $i from 1 through 12 {
+//   li:nth-child(3n + #{$i}) {
+//     background-color: lighten($base-color, $i * 5%);
+//   }
+// }
+
+$a:#000;
+
+@if $a==#000{
+    @for $i from 1 through 12 {
+        li:nth-child(3n + #{$i}) {
+          background-color: lighten($base-color, $i * 5%);
+        }
+      }
+}
+@else{
+    @for $i from 1 through 12 {
+        li:nth-child(3n + #{$i}) {
+          background-color: lighten($base-color, $i * 1%);
+        }
+      }
+}
