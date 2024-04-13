@@ -4,6 +4,7 @@ import About from './pages/About'
 import Header from './components/Header'
 import Products from './pages/Products'
 import NotFoundPage from './pages/NotFoundPage'
+import ProductDetails from './pages/ProductDetails'
 
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
                     <Route path='/' element={<Home/>}></Route>
                     <Route path='/about' element={<About/>}></Route>
                     <Route path='/products' element={<Products/>}></Route>
+                    <Route path='/products/:slug' element={<ProductDetails/>}></Route>
                     <Route path='*' element={<NotFoundPage/>}></Route>
                 </Routes>
         </BrowserRouter>
