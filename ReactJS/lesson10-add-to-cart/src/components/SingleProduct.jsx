@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import slugify from 'slugify';
 import { useCart } from 'react-use-cart';
 import { ToastContainer, toast,Bounce } from 'react-toastify';
-
 const SingleProduct = ({ alldata }) => {
     const { addItem } = useCart();
     const notify = () => toast.success('Product added to cart', {
@@ -17,6 +16,7 @@ const SingleProduct = ({ alldata }) => {
         theme: "dark",
         transition: Bounce
     });
+
     return (
         <div className='col-12 col-sm-6 col-md-4'>
             <div className="card">

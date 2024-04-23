@@ -1,9 +1,29 @@
 import React from 'react'
 import { useCart } from 'react-use-cart';
+import swal from 'sweetalert';
+
 const Cart = () => {
 
     const { isEmpty, items,removeItem,updateItemQuantity,cartTotal } = useCart();
-
+    const deleteAlert =(id)=>{
+        swal({
+            title: "Are you sure?",
+            text: "Your product will delete!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              swal("Your product has been deleted!", {
+                icon: "success",
+              });
+              removeItem(id)
+            } else {
+              swal("Your product is safe!");
+            }
+          });
+    }
     return (
         <>
             {isEmpty ? <div className='d-flex justify-content-center align-items-center'><img src="https://silkbooth.com/media/wysiwyg/test/Cart_empty_page.gif" alt="" /></div> : <div className='d-flex align-items-center justify-content-center flex-column'>
@@ -33,7 +53,7 @@ const Cart = () => {
                                         <span className='mx-3'>{item.quantity}</span>
                                         <button onClick={() => updateItemQuantity(item.id, item.quantity + 1)} className='btn btn-dark'>+</button>
                                     </td>
-                                    <td><button className='btn btn-danger' onClick={()=>{removeItem(item.id)}}>X</button></td>
+                                    <td><button className='btn btn-danger' onClick={()=>{deleteAlert(item.id)}}>X</button></td>
                                 </tr>
 
                             ))}
