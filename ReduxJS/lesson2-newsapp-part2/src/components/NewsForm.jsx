@@ -2,6 +2,8 @@ import React, { useRef } from 'react'
 import { Col } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux';
 import { addNews } from '../tools/actions/newsActions';
+import swal from 'sweetalert';
+import { useNavigate } from 'react-router-dom';
 
 const NewsForm = () => {
     const imgRef = useRef(null);
@@ -9,10 +11,14 @@ const NewsForm = () => {
     const descRef = useRef(null);
     const dispatch = useDispatch();
     const data = useSelector(p=>p);
+    const navigate = useNavigate();
     const formSubmit =(e)=>{
         e.preventDefault();
         dispatch(addNews({img:imgRef.current.value,title:titleRef.current.value,desc:descRef.current.value}))
-        console.log(data);    
+        swal("News added","","success")
+        setTimeout(()=>{
+            navigate('/news')
+        },1500)
     }
     
     
