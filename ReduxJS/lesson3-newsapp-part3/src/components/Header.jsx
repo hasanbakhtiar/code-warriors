@@ -21,7 +21,7 @@ const Header = () => {
                         </li>
 
                     </ul>
-                    <LinkContainer to="/dashboard"><Button variant='info'>Dashbaord</Button></LinkContainer>
+                    <LinkContainer to="/login"><Button variant='info'>Login</Button></LinkContainer>
                 </div>
             </div>
         </nav>

@@ -33,7 +33,7 @@ const NewsForm = ({formData,editdata}) => {
                         <label className="form-label">Description</label>
                         <textarea  onChange={e=>setDesc(e.target.value)} type="text" className="form-control" style={{height:"200px"}}>{desc}</textarea>
                     </div>
-                    <button type="submit" className="btn btn-info">Add News</button>
+                    <button type="submit" className="btn btn-info">{editdata?"Edit ":"Add News"}</button>
                     
                 </form>
             </Col>

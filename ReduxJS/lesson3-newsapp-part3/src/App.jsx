@@ -7,6 +7,7 @@ import Footer from "./components/Footer"
 import AddNews from "./pages/dashboard/AddNews"
 import Dashboard from "./pages/dashboard/Dashboard"
 import EditNews from "./pages/dashboard/EditNews"
+import Login from "./pages/Login"
 
 
 
@@ -18,9 +19,12 @@ const App = () => {
         <Route path="/" element={<Home />}></Route>
         <Route path="/news" element={<News />}></Route>
         <Route path="/news/:slug" element={<NewsDetails />}></Route>
-        <Route path="/dashboard" element={<Dashboard />}></Route>
-        <Route path="/dashboard/add" element={<AddNews />}></Route>
-        <Route path="/dashboard/edit/:slug" element={<EditNews />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+
+          <Route path="/dashboard" element={<Dashboard />}></Route>
+          <Route path="/dashboard/add" element={<AddNews />}></Route>
+          <Route path="/dashboard/edit/:slug" element={<EditNews />}></Route>
+
       </Routes>
       <Footer />
     </BrowserRouter>
