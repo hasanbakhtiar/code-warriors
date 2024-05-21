@@ -1,18 +1,23 @@
-import { useState } from "react"
-import { product } from "./data/product";
+import { useContext, useRef, useState } from "react"
+import { DataContext } from "./context/DataContext";
 
 const App:React.FC = () => {
-    const [count,setCount] = useState<number | string>(0);
+  const inputRef = useRef<HTMLInputElement>(null); 
+  const [state,setState] = useState<string>("Hello");
+    const formSubmit =(e:React.FormEvent)=>{
+        e.preventDefault();
+        setState(inputRef.current!.value);
+    }
+    const basicdata = useContext(DataContext); 
   return (
     <div>
-        {count}
-        <button onClick={()=>setCount("hello")}>set</button>
-        <ul>
-        {product.map((item:any,c:number)=>(
-            <li key={c}>{item.title}</li>
-        ))}
-        </ul>
-    
+      <h1>{state}</h1>
+      <p>{basicdata[0].title}</p>
+    <form onSubmit={formSubmit}>
+    <input type="text" ref={inputRef} />
+    <button>send</button>
+    </form>
+
     </div>
   )
 }
