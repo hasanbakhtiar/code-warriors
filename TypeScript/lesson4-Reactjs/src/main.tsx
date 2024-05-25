@@ -12,6 +12,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       <App />
     </DataProvider> */}
     {/* <AppUseMemo /> */}
-    <AppUseLayoutEffect />
+    {/* <AppUseLayoutEffect /> */}
+    <AppUseImperativeHandle />
+
   </React.StrictMode>
 );
