@@ -1,10 +1,9 @@
-import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
 import { add } from './features/todoSlice';
+import { useAppDispatch, useAppSelector } from './store';
 
 const App = () => {
-    const data = useSelector((p:any)=>p.todos);
-    const dispatch = useDispatch();
+    const data = useAppSelector((p:any)=>p.todos);
+    const dispatch = useAppDispatch();
   return (
     <div>
         {data.map((item:any)=>(
