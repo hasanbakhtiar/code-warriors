@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.5",
+    "@supabase/supabase-js": "^2.43.4",
     "bootstrap": "^5.3.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -18,8 +19,7 @@
     "react-router-dom": "^6.23.1",
     "react-slick": "^0.30.2",
     "react-spinners": "^0.13.8",
-    "slick-carousel": "^1.8.1",
-    "three": "^0.165.0"
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",

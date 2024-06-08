@@ -1,30 +1,19 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit"
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { carPayloadType } from "../../types/sliceType";
 
-interface productType{
-    id:string | number;
-    img:string;
-    title:string;
-    price:number;
 
-}
-const initialState:productType[] = [
-    {
-        id:1,
-        img:"1.jpg",
-        title:"Nissan",
-        price:30000
-    }
-]
+
 const carSlice = createSlice({
-    name:"car",
-    initialState,
-    reducers:{
-        add:(state,action:PayloadAction)=>{
-                const newTodo:any = {id:crypto.randomUUID(),text:action.payload}
-                state.push(newTodo);
-        }
-    }
-})
+    name: 'car',
+    initialState: [],
+    reducers: {
+      carread: (state, action:PayloadAction<carPayloadType | any>) => {
+        return action.payload;
+      },
+    },
+  })
 
 
-export default carSlice.reducer;
+  export default carSlice.reducer;
+
+  export const {carread} = carSlice.actions;

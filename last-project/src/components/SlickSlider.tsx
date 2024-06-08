@@ -41,7 +41,7 @@ import SingleCard from "./SingleCard";
   return (
     <Slider {...settings}>
         {alldata.map((item:any)=>(
-        <SingleCard carddata={item} key={item.id} />
+        <SingleCard title={item.title} img={item.img} key={item.id} responsiveclass="col-11" />
         ))}
     </Slider>
   );

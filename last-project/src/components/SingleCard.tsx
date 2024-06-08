@@ -1,10 +1,10 @@
-const SingleCard:React.FC<any> = ({carddata}) => {
+const SingleCard:React.FC<any> = ({img,title,responsiveclass}) => {
   return (
-    <div className="col-12 col-sm-12 col-md-11">
+    <div className={responsiveclass}>
       <div className="card">
-        <img src={carddata.img} className="card-img-top" alt="..." />
+        <img  style={{objectFit:"contain"}} src={img} className="card-img-top" alt="..." />
         <div className="card-body">
-          <h5 className="card-title">{carddata.title}</h5>
+          <h5 className="card-title">{title}</h5>
         
           <div className="btn btn-primary">
             read more

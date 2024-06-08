@@ -12,6 +12,12 @@ import "slick-carousel/slick/slick-theme.css";
 import App from "./App";
 import { Provider } from "react-redux";
 import store from "./tools/store";
+import { branddata, cardata } from "./tools/func/calldata";
+
+
+cardata();
+branddata();
+
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
