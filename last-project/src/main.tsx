@@ -8,7 +8,7 @@ import "../node_modules/bootstrap/dist/js/bootstrap.bundle";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 // ==============================slick slider end==========================
-// slick slider end
+import './sass/style.scss';
 import App from "./App";
 import { Provider } from "react-redux";
 import store from "./tools/store";

@@ -1,6 +1,7 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { carPayloadType } from "../../types/sliceType";
 import supabase from "../../config/connect";
+import swal from "sweetalert";
 
 
 
@@ -11,7 +12,7 @@ const brandSlice = createSlice({
     brandread: (state, action: PayloadAction<carPayloadType | any>) => {
       return action.payload;
     },
-    add: (state, action: PayloadAction<carPayloadType | any>) => {
+    brandadd: (state, action: PayloadAction<carPayloadType | any>) => {
       const createbrand = async () => {
         const { data, error }: any = await supabase
           .from('brandofcar')
@@ -20,7 +21,10 @@ const brandSlice = createSlice({
           console.log(error);
 
         } else {
-          console.log(data);
+          swal("Brand add successfully","","success");
+          setTimeout(() => {
+            window.location.assign("http://localhost:5173/dashboard/brand/read")
+          }, 2000);
 
 
         }
@@ -34,4 +38,4 @@ const brandSlice = createSlice({
 
 export default brandSlice.reducer;
 
-export const { brandread, add } = brandSlice.actions;
+export const { brandread, brandadd } = brandSlice.actions;
