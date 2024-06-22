@@ -23,13 +23,13 @@ const App = () => {
         {/* Brand Start */}
         <Route path="/dashboard/brand/read" element={<BrandRead />}></Route>
         <Route path="/dashboard/brand/add" element={<BrandCreate/>}></Route>
-        <Route path="/dashboard/brand/update" element={<BrandUpdate />}></Route>
+        <Route path="/dashboard/brand/update/:id" element={<BrandUpdate />}></Route>
         {/* Brand End */}
 
         {/* Brand Start */}
         <Route path="/dashboard/car/read" element={<CarRead />}></Route>
         <Route path="/dashboard/car/add" element={<CarCreate />}></Route>
-        <Route path="/dashboard/car/update" element={<CarUpdate />}></Route>
+        <Route path="/dashboard/car/update/:id" element={<CarUpdate />}></Route>
         {/* Brand End */}
       </Routes>
     </BrowserRouter>

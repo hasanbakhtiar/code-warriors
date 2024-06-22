@@ -1,16 +1,19 @@
 import React from "react";
-import { useAppSelector } from "../../../tools/store";
+import { useAppDispatch, useAppSelector } from "../../../tools/store";
 import { Link } from "react-router-dom";
+import { cardelete } from "../../../tools/slices/carSlice";
 
 const Read = () => {
   const brands = useAppSelector((p: any) => {
   return  p.car;
   });
 
+  const dispatch = useAppDispatch();
+
   return (
     <div className="container">
       <h1 className="my-5">Cars list</h1>
-      <Link className="btn btn-info" to="/dashboard/car/add">Add car</Link>
+      <Link className="btn btn-dark" to="/dashboard/car/add">Add car</Link>
       <table className="table">
         <thead>
           <tr>
@@ -31,8 +34,8 @@ const Read = () => {
               <td>{item.brand}</td>
               <td>{item.model}</td>
               <td>${item.price}</td>
-              <td><button className="btn btn-warning">Edit</button></td>
-              <td><button className="btn btn-danger">Delete</button></td>
+              <td><Link to={`/dashboard/car/update/${item.id}`} className="btn btn-warning">Edit</Link></td>
+              <td><button className="btn btn-danger" onClick={()=>{dispatch(cardelete(item.id))}}>Delete</button></td>
             </tr>
           ))}
         </tbody>

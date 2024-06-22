@@ -13,7 +13,7 @@ const carSlice = createSlice({
         return action.payload;
       },
       caradd: (state, action: PayloadAction<carPayloadType | any>) => {
-        const createbrand = async () => {
+        const createcar = async () => {
           const { data, error }: any = await supabase
             .from('cars')
             .insert(action.payload)
@@ -25,17 +25,56 @@ const carSlice = createSlice({
             setTimeout(() => {
               window.location.assign("http://localhost:5173/dashboard/car/read")
             }, 2000);
-  
-  
           }
   
         }
-        createbrand();
+        createcar();
+      },
+      cardelete:(state,action: PayloadAction<carPayloadType | any>)=>{
+        const deletecar = async () => {
+          const { data, error }: any = await supabase
+            .from('cars')
+            .delete()
+            .eq('id',action.payload)
+            
+          if (error) {
+            console.log(error);
+  
+          } else {
+            swal("Car has been deleted ","","warning");
+            setTimeout(() => {
+              window.location.assign("http://localhost:5173/dashboard/car/read")
+            }, 2000);
+          }
+  
+        }
+        deletecar();
+      },
+      caredit:(state,action: PayloadAction<carPayloadType | any>)=>{
+        const editcar = async () => {
+          const { data, error }: any = await supabase
+            .from('cars')
+            .update(action.payload.data)
+            .eq('id',action.payload.id)
+            
+          if (error) {
+            console.log(error);
+  
+          } else {
+            swal("Car has been edited ","","success");
+            setTimeout(() => {
+              window.location.assign("http://localhost:5173/dashboard/car/read")
+            }, 2000);
+          }
+  
+        }
+        editcar();
       }
     },
+      
   })
 
 
   export default carSlice.reducer;
 
-  export const {carread,caradd} = carSlice.actions;
+  export const {carread,caradd,cardelete,caredit} = carSlice.actions;

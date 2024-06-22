@@ -26,9 +26,9 @@ const Cars = () => {
         <hr />
       <div className="row g-5">
       {filterdata.length===0?cars.map((item:any)=>(
-          <SingleCard key={item.id} title={item.model} img={item.photo} responsiveclass="col-12 col-sm-6 col-md-4" />
+          <SingleCard key={item.id} title={item.model} brand={item.brand} price={item.price} img={item.photo} responsiveclass="col-12 col-sm-6 col-md-4" />
         )):filterdata.map((item:any)=>(
-          <SingleCard key={item.id} title={item.model} img={item.photo} responsiveclass="col-12 col-sm-6 col-md-4" />
+          <SingleCard key={item.id} title={item.model} brand={item.brand} price={item.price} img={item.photo} responsiveclass="col-12 col-sm-6 col-md-4" />
         ))}
       </div>
 

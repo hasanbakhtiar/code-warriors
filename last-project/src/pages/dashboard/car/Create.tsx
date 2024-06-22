@@ -122,7 +122,7 @@ const Create = () => {
               ref={descRef}
             />
           </div>
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-dark">
             Create
           </button>
         </form>
