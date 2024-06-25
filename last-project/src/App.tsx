@@ -10,12 +10,15 @@ import BrandUpdate from "./pages/dashboard/brand/Update";
 import CarCreate from "./pages/dashboard/car/Create";
 import CarRead from "./pages/dashboard/car/Read";
 import CarUpdate from "./pages/dashboard/car/Update";
+import Login from "./pages/auth/Login";
+import Regsiter from "./pages/auth/Regsiter";
 
 const App = () => {
   return (
     <BrowserRouter>
       <Header />
-      <Routes>
+    <div className="container">
+    <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/cars" element={<Cars />}></Route>
         <Route path="/brands" element={<Brands />}></Route>
@@ -31,7 +34,14 @@ const App = () => {
         <Route path="/dashboard/car/add" element={<CarCreate />}></Route>
         <Route path="/dashboard/car/update/:id" element={<CarUpdate />}></Route>
         {/* Brand End */}
+
+        {/* Auth Start */}
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/register" element={<Regsiter />}></Route>
+        {/* Auth End */}
+
       </Routes>
+    </div>
     </BrowserRouter>
   );
 };

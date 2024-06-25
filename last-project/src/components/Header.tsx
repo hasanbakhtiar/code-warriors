@@ -1,6 +1,10 @@
+import { useCookies } from "react-cookie";
 import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
+  const [cookie] = useCookies([]);
+  console.log(cookie.admintoken);
+  
   return (
     <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
       <div className="container">
@@ -33,6 +37,7 @@ const Header = () => {
           </ul>
 
         {/* <Link to="/login" className="btn btn-warning">Login</Link> */}
+        {cookie.admintoken === "j1n312jn31j"? 
         <li className="nav-item dropdown btn btn-warning">
             <a
               className="nav-link dropdown-toggle "
@@ -57,6 +62,10 @@ const Header = () => {
             
           
             </ul>
+          </li>:""}
+          <li>
+            <Link to="/register" className="btn btn-warning me-3">Regsiter</Link>
+            <Link to="/login" className="btn btn-light ">Login</Link>
           </li>
         </div>
       </div>
