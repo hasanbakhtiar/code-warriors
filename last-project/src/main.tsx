@@ -12,9 +12,10 @@ import './sass/style.scss';
 import App from "./App";
 import { Provider } from "react-redux";
 import store from "./tools/store";
-import { branddata, cardata } from "./tools/func/calldata";
+import { branddata, cardata, userdata } from "./tools/func/calldata";
 
 
+userdata();
 cardata();
 branddata();
 

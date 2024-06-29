@@ -2,11 +2,13 @@ import { configureStore } from '@reduxjs/toolkit'
 import carSlice from '../slices/carSlice'
 import brandSlice from '../slices/brandSlice'
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
+import userSlice from '../slices/userSlice'
 
 const store = configureStore({
   reducer: {
     car:carSlice,
-    brand:brandSlice
+    brand:brandSlice,
+    user:userSlice
   },
 })
 

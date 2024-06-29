@@ -27,38 +27,37 @@ const Register = () => {
         ) {
         swal('Please, fill inputs','','warning');
         }else{
+          const createdUser = async()=>{
+            const {error} = await supabase.from('users').insert({
+                fullname:fullname.current?.value,
+                birthday:birthday.current?.value,
+                tel:tel.current?.value,
+                email:email.current?.value,
+                password:password.current?.value,
+                token: crypto.randomUUID()
+            })
+            if (error) {
+                swal('Something went wrong!',"","error");
+                console.log(error);
+                
+            }else{
+                swal('New account has been created!','','success');
+                setTimeout(()=>{
+                    window.location.assign('/login')
+                },2000);
+            }
+        }
             const sendDataToDb = async()=>{
                 if (password.current?.value !== confirePassword.current?.value ) {
                     swal("Password is not equal!","","error");
                 }else{
-                    const createdUser = async()=>{
-                        const {error} = await supabase.from('users').insert({
-                            fullname:fullname.current?.value,
-                            birthday:birthday.current?.value,
-                            tel:tel.current?.value,
-                            email:email.current?.value,
-                            password:password.current?.value,
-                            token: crypto.randomUUID()
-                        })
-                        if (error) {
-                            swal('Something went wrong!',"","error");
-                            console.log(error);
-                            
-                        }else{
-                            swal('New account has been created!','','success');
-                            setTimeout(()=>{
-                                window.location.assign('/login')
-                            },2000);
-                        }
-                    }
+                  
                     const {data} = await supabase.from('users').select();
-                    data?.length ===0 ? createdUser() : data?.map((item:any)=>(
-                        item.email === email.current?.value ?
-                            swal('This email is already registered!',"","error"):createdUser()
-                        ))
+                    data?.length ===0 ? createdUser() : data?.find(p=>p.email === email.current?.value) ? swal('This email is already registered!',"","error") : createdUser()
                 }
             }
             sendDataToDb();
+
         }
         
     

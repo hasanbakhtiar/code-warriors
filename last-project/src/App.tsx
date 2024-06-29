@@ -12,6 +12,7 @@ import CarRead from "./pages/dashboard/car/Read";
 import CarUpdate from "./pages/dashboard/car/Update";
 import Login from "./pages/auth/Login";
 import Regsiter from "./pages/auth/Regsiter";
+import Account from "./pages/auth/Account";
 
 const App = () => {
   return (
@@ -38,6 +39,7 @@ const App = () => {
         {/* Auth Start */}
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Regsiter />}></Route>
+        <Route path="/account/:token" element={<Account />}></Route>
         {/* Auth End */}
 
       </Routes>

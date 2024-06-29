@@ -2,8 +2,9 @@ import { useCookies } from "react-cookie";
 import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
-  const [cookie] = useCookies([]);
-  console.log(cookie.admintoken);
+  const [cookie,setCookie,removeCookie] = useCookies();
+  console.log(cookie);
+  
   
   return (
     <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
@@ -37,7 +38,8 @@ const Header = () => {
           </ul>
 
         {/* <Link to="/login" className="btn btn-warning">Login</Link> */}
-        {cookie.admintoken === "j1n312jn31j"? 
+        {cookie['admintoken'] === "j1n312jn31j"? 
+        <>
         <li className="nav-item dropdown btn btn-warning">
             <a
               className="nav-link dropdown-toggle "
@@ -62,11 +64,22 @@ const Header = () => {
             
           
             </ul>
-          </li>:""}
-          <li>
+          </li>
+          <li><button className="btn btn-danger" onClick={()=>{
+            removeCookie('admintoken');
+            window.location.assign('/');
+          }}>Log out</button></li>
+        </>:  cookie['cookie-car']?<li>
+        <Link to={`/account/${cookie['cookie-car']}`} className="btn btn-warning me-3">{localStorage.getItem('username')}</Link>
+        <button onClick={()=>{
+            removeCookie('cookie-car');
+            window.location.assign('/');
+          }} className="btn btn-danger">Log out</button>
+        </li>:<li>
             <Link to="/register" className="btn btn-warning me-3">Regsiter</Link>
             <Link to="/login" className="btn btn-light ">Login</Link>
-          </li>
+          </li>}
+      
         </div>
       </div>
     </nav>

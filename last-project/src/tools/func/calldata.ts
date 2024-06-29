@@ -1,6 +1,7 @@
 import supabase from "../../config/connect"
 import { brandread } from "../slices/brandSlice";
 import { carread } from "../slices/carSlice";
+import { userread } from "../slices/userSlice";
 import store from "../store";
 
 export const cardata= async()=>{
@@ -21,6 +22,17 @@ export const branddata= async()=>{
         
     }else{
         store.dispatch(brandread(data));
+        
+    }
+}
+
+export const userdata= async()=>{
+    const {data,error}:any = await supabase.from('users').select();
+    if (error) {
+        console.log(error);
+        
+    }else{
+        store.dispatch(userread(data));
         
     }
 }
