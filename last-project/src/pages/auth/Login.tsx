@@ -28,13 +28,28 @@ const Login = () => {
         
             const createCookie = (token:string)=>{
                 setCookie("cookie-car",token);
-                swal('Login is successfull!','','success')
+                swal('Login is successfull!','','success');
+                setTimeout(() => {
+                  window.location.assign('/')
+                }, 2000);
             }
             const {data} = await supabase.from('users').select();
-            data?.map((item:any)=>(
-                item.email === email.current?.value && item.password === password.current?.value ? 
-                (createCookie(item.token), localStorage.setItem('username',item.fullname), window.location.assign('/')) :  swal('Email or password is wrong!','','error')
-            ))  
+         
+            const userfiltered = data?.find((p:any)=>{
+              return p.email ===email.current?.value;
+            })
+          if (userfiltered === undefined) {
+            swal('Email or password is wrong!','','error')
+          }else{
+            if (userfiltered.password === password.current?.value ) {
+              (createCookie(userfiltered.token), localStorage.setItem('username',userfiltered.fullname))   
+            }else{
+              swal('Email or password is wrong!','','error')
+            }
+          }
+
+            
+            
         }
         checkLogin();
     }

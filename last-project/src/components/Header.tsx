@@ -1,9 +1,9 @@
 import { useCookies } from "react-cookie";
 import { Link, NavLink } from "react-router-dom";
+import swal from "sweetalert";
 
 const Header = () => {
   const [cookie,setCookie,removeCookie] = useCookies();
-  console.log(cookie);
   
   
   return (
@@ -73,12 +73,17 @@ const Header = () => {
         <Link to={`/account/${cookie['cookie-car']}`} className="btn btn-warning me-3">{localStorage.getItem('username')}</Link>
         <button onClick={()=>{
             removeCookie('cookie-car');
+            swal("Log out is successfully","","success")
+            setTimeout(() => {
             window.location.assign('/');
+            }, 1500);            
           }} className="btn btn-danger">Log out</button>
         </li>:<li>
             <Link to="/register" className="btn btn-warning me-3">Regsiter</Link>
             <Link to="/login" className="btn btn-light ">Login</Link>
           </li>}
+
+          <Link to={`${!cookie['cookie-car']?"/login":"/basket"}`} className="btn btn-light ms-3">Basket</Link>
       
         </div>
       </div>

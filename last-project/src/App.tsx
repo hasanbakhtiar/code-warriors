@@ -13,6 +13,7 @@ import CarUpdate from "./pages/dashboard/car/Update";
 import Login from "./pages/auth/Login";
 import Regsiter from "./pages/auth/Regsiter";
 import Account from "./pages/auth/Account";
+import Basket from "./pages/Basket";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/" element={<Home />}></Route>
         <Route path="/cars" element={<Cars />}></Route>
         <Route path="/brands" element={<Brands />}></Route>
+        <Route path="/basket" element={<Basket />}></Route>
 
         {/* Brand Start */}
         <Route path="/dashboard/brand/read" element={<BrandRead />}></Route>
@@ -41,6 +43,7 @@ const App = () => {
         <Route path="/register" element={<Regsiter />}></Route>
         <Route path="/account/:token" element={<Account />}></Route>
         {/* Auth End */}
+        
 
       </Routes>
     </div>
